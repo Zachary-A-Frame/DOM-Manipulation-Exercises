@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<!-- Write the code necessary to do the following:
+
+
+
+ -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Check the Console!</h1>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+</body>
+<script>
+     // Select the section with an id of container without using querySelector.
+     console.log("Select the section with an id of container without using querySelector")
+     const idOfContainer = document.getElementById("container")
+     console.log(idOfContainer)
+
+     console.log("-----------------------------------------")
+     console.log("Select section with id of container using querySelector")
+     // Select the section with an id of container using querySelector.
+     const idOfContainerQuery = document.querySelector("#container")
+     console.log(idOfContainerQuery)
+
+     console.log("-----------------------------------------")
+     console.log("Select all list items with a class of `second`")
+     // Select all of the list items with a class of “second”.
+     const classOfSecond = document.querySelectorAll(".second")
+     console.log(classOfSecond)
+
+     console.log("-----------------------------------------")
+     console.log("Select li  with class `third`, but only the list item inside of the ol tag.")
+     // Select a list item with a class of third, but only the list item inside of the ol tag.
+     const listItemInClassOfThird = document.querySelector(".third")
+     console.log(listItemInClassOfThird.innerText)
+
+     // Give the section with an id of container the text “Hello!”.
+     console.log("-----------------------------------------")
+     console.log("Give section with id of `container` the text 'Hello!'")
+     const helloTextContainer = document.querySelector("#container")
+     const helloText = document.createElement("h2")
+     helloText.innerText = "Hello from #container!"
+
+     helloTextContainer.prepend(helloText)
+
+
+     console.log("-----------------------------------------")
+     console.log("Add the class main to the div with a class of footer")
+     // Add the class main to the div with a class of footer.
+     const footer = document.querySelector(".footer")
+     console.log(footer.getAttribute("class"))
+     footer.classList.add("main")
+     console.log(footer.getAttribute("class"))
+
+     // Remove the class main on the div with a class of footer.
+     footer.classList.remove("main")
+     console.log(footer.getAttribute("class"))
+     console.log("-----------------------------------------")
+     console.log("Create a new li, give the li the text `four`, append the li to the ul element")
+     // Create a new li element.
+     // Give the li the text “four”.
+     // Append the li to the ul element.
+     const currentList = document.querySelector("ol")
+     const newLi = document.createElement("li")
+
+     newLi.innerText = "Four!"
+     newLi.setAttribute("class", "four")
+
+     currentList.append(newLi)
+     console.log(document.querySelector(".four").getAttribute("class"))
+     console.log("-----------------------------------------")
+
+     // Loop over all of the lis inside the ol tag and give them a background color of “green”.
+     const ol = document.querySelector("ol")
+     const olChildren = ol.children
+     for (let item of olChildren) {
+          item.style.backgroundColor="green"
+     }
+
+     // Removed the div with a class of footer
+     console.log("Remove the div with a class of footer")
+     document.querySelector(".footer").remove()
+
+</script>
+</html>
